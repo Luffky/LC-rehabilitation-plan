@@ -4,12 +4,8 @@ class Solution {
         if (k == 0) {
             return;
         }
-        int total = k;
-        Set<Integer> set = new HashSet<>();
-        for (int i = 0; i < total; i++) {
-            if (set.contains(i)) {
-                continue;
-            }
+        int count = 0;
+        for (int i = 0; count < nums.length; i++) {
             int j = i;
             int temp = nums[j];
             do {
@@ -17,10 +13,10 @@ class Solution {
                 int tmp2 = nums[next];
                 nums[next] = temp;
                 temp = tmp2;
-                set.add(j);
+                count++;
                 j = next;
             } while (j != i);
         }
-    
+
     }
 }
